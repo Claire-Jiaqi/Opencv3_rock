@@ -1,18 +1,11 @@
 import cv2
-import numpy as np
 
 
 def main():
     # Read image
-    img_path = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/images/rock1.jpg"
+    img_path = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/images/image1.jpg"
     img = cv2.imread(img_path, 0)
 
-    # 创建一个窗口
-    '''
-    cv2.namedWindow("image", flags=cv2.WINDOW_AUTOSIZE)
-
-    cv2.namedWindow("image_roi", flags=cv2.WINDOW_NORMAL | cv2.WINDOW_FREERATIO)
-'''
     # use k-means method resize the original photo to 1/4
 
     img_test2 = cv2.resize(img, (0, 0), fx=0.25, fy=0.25, interpolation=cv2.INTER_NEAREST)
@@ -36,7 +29,6 @@ def main():
     # Display cropped image
     cv2.imshow("image_roi", imCrop)
     cv2.imwrite("image_roi.png", imCrop)
-
     cv2.waitKey(0)
 
 

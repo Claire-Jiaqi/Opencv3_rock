@@ -6,9 +6,9 @@ matplotlib.use("TkAgg")
 from matplotlib import pyplot as plt
 
 
-def doCanny():
-    filename = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/images/rock3.jpg"
-    img = cv2.imread(filename, 0)
+def doCanny(img):
+    # filename = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/image_roi.png"
+    # img = cv2.imread(filename, 0)
 
     edges = cv2.Canny(img, 100, 200)
 
@@ -21,7 +21,7 @@ def doCanny():
 
 
 def addaptiveCanny():
-    filename = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/images/rock3.jpg"
+    filename = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/image_roi.png"
     img = cv2.imread(filename, 0)
 
     img_1 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
@@ -41,5 +41,3 @@ def addaptiveCanny():
         plt.title(titles[i])
     plt.show()
 
-
-doCanny()
