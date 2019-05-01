@@ -3,7 +3,7 @@ import cv2
 
 def main():
     # Read image
-    img_path = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/images/image1.jpg"
+    img_path = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/images/rock1.jpg"
     img = cv2.imread(img_path, 0)
 
     # use k-means method resize the original photo to 1/4
