@@ -54,6 +54,12 @@ def waterShed(sourceDir):
     cv2.imshow("Difference value", unknown)
     cv2.imwrite('/Users/jiaqi970602/PycharmProjects/Opencv_detect/unknown_reginon.png', unknown)
 
+    image, contours, hierarchy = cv2.findContours(unknown, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    img = cv2.drawContours(img, contours, -1, (0, 255, 0), 2)
+    cv2.imshow("contours", img)
+
+    cv2.waitKey(0)
+'''
     # Marker labelling
     retval_C, marks = cv2.connectedComponents(dst_fg)
     cv2.imshow('Connect marks', marks)
@@ -75,7 +81,7 @@ def waterShed(sourceDir):
 
     cv2.imshow("Watershed", img)
     cv2.imwrite('/Users/jiaqi970602/PycharmProjects/Opencv_detect/watershed.png', img)
-    cv2.waitKey(0)
+    '''
 
 
 sourceDir = "/Users/jiaqi970602/PycharmProjects/Opencv_detect/image_roi_1.png"
